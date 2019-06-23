@@ -1,0 +1,14 @@
+.Box {
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  margin-top: 10px;
+}
+
+.on {
+  background-color: yellow;
+}
+
+.off {
+  background-color: black;
+}
