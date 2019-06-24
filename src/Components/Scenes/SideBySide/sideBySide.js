@@ -1,6 +1,6 @@
 import React from 'react';
 import {Component} from 'react';
-import {Blinker} from '../../';
+import {BlinkerContainer} from '../../';
 import './sideBySide.css';
 
 class SideBySide extends Component {
@@ -14,8 +14,7 @@ class SideBySide extends Component {
   render() {
     return(
       <center className="container">
-        <Blinker isRandom={true}/>
-        <Blinker isRandom={false}/>
+        <BlinkerContainer isRandom={true}/>
       </center>
     );
   }
