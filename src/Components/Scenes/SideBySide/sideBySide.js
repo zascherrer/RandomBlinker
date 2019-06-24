@@ -15,6 +15,7 @@ class SideBySide extends Component {
     return(
       <center className="container">
         <BlinkerContainer isRandom={true}/>
+        <BlinkerContainer isRandom={false}/>
       </center>
     );
   }
