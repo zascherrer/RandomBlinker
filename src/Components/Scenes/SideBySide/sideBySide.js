@@ -13,10 +13,10 @@ class SideBySide extends Component {
 
   render() {
     return(
-      <center className="container">
+      <div className="container">
         <BlinkerContainer isRandom={true}/>
         <BlinkerContainer isRandom={false}/>
-      </center>
+      </div>
     );
   }
 }

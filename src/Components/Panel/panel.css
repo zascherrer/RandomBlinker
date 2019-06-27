@@ -1,7 +1,6 @@
 .panel {
   height: auto;
-  width: auto;
+  width: 150px;
   background-color: gray;
   z-index: 0;
-  flex-direction: column;
 }
