@@ -8,13 +8,15 @@ class ValueBar extends Component {
     super(props);
     this.state = {
       value: 404,
+      displayValue: 0.4,
       valueChangeInterval: 100,
     }
   }
 
   componentWillMount() {
     if(this.props.value) {
-      this.setState({value: this.props.value})
+      const displayValue = this.props.value / 1000;
+      this.setState({value: this.props.value, displayValue: displayValue})
     }
     else {
       console.log("Value not supplied.");
@@ -23,12 +25,12 @@ class ValueBar extends Component {
 
   valueDecrease = () => {
     const newValue = this.state.value - this.state.valueChangeInterval;
-    this.setState({value: newValue});
+    this.setState({value: newValue, displayValue: newValue / 1000});
   }
 
   valueIncrease = () => {
     const newValue = this.state.value + this.state.valueChangeInterval;
-    this.setState({value: newValue});
+    this.setState({value: newValue, displayValue: newValue / 1000});
   }
 
   render() {
@@ -40,7 +42,7 @@ class ValueBar extends Component {
     return (
       <div className="bar">
         <Button text="-" onClick={this.valueDecrease} size="mini"/>
-        <div className="text">{this.state.value}</div>
+        <div className="text">{this.state.displayValue}{" s"}</div>
         <Button text="+" onClick={this.valueIncrease} size="mini"/>
       </div>
     );
