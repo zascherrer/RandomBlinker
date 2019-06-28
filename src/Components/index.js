@@ -3,6 +3,7 @@ import Button from './Button/button';
 import Box from './Box/box';
 import Panel from './Panel/panel';
 import BlinkerContainer from './BlinkerContainer/blinkerContainer';
+import ValueBar from './ValueBar/valueBar'
 import {SideBySide} from './Scenes';
 
 export {
@@ -11,5 +12,6 @@ export {
   Box,
   Panel,
   BlinkerContainer,
+  ValueBar,
   SideBySide
 }

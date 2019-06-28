@@ -1,3 +1,7 @@
 .button {
   width: 100px;
 }
+
+.miniButton {
+  width: 20px;
+}
