@@ -8,11 +8,32 @@ class BlinkerContainer extends Component {
     this.state = {
       minimumPeriod: 500,
       maximumPeriod: 1500,
+      valueChangeInterval: 100,
     }
   }
 
   componentWillMount() {
 
+  }
+
+  minimumPeriodDecrease = () => {
+    const newMinimumPeriod = this.state.minimumPeriod - this.state.valueChangeInterval;
+    this.setState({minimumPeriod: newMinimumPeriod});
+  }
+
+  minimumPeriodIncrease = () => {
+    const newMinimumPeriod = this.state.minimumPeriod + this.state.valueChangeInterval;
+    this.setState({minimumPeriod: newMinimumPeriod});
+  }
+
+  maximumPeriodDecrease = () => {
+    const newMaximumPeriod = this.state.maximumPeriod - this.state.valueChangeInterval;
+    this.setState({maximumPeriod: newMaximumPeriod});
+  }
+
+  maximumPeriodIncrease = () => {
+    const newMaximumPeriod = this.state.maximumPeriod + this.state.valueChangeInterval;
+    this.setState({maximumPeriod: newMaximumPeriod});
   }
 
   render() {
@@ -25,8 +46,18 @@ class BlinkerContainer extends Component {
               minimumPeriod={this.state.minimumPeriod}
               maximumPeriod={this.state.maximumPeriod}
             />
-            <ValueBar value={1000} valueType="Lower Threshold"/>
-            <ValueBar value={1000} valueType="Upper Threshold"/>
+            <ValueBar
+              displayValue={this.state.minimumPeriod / 1000}
+              valueType="Lower Threshold"
+              valueDecrease={this.minimumPeriodDecrease}
+              valueIncrease={this.minimumPeriodIncrease}
+            />
+            <ValueBar
+              displayValue={this.state.maximumPeriod / 1000}
+              valueType="Upper Threshold"
+              valueDecrease={this.maximumPeriodDecrease}
+              valueIncrease={this.maximumPeriodIncrease}
+            />
           </Panel>
         </div>
       );
