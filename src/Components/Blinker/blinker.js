@@ -4,7 +4,7 @@ import {Button, Box} from '../'
 import './blinker.css'
 
 class Blinker extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.state = {
       blinkerOn: null,
@@ -28,8 +28,8 @@ class Blinker extends Component {
   }
 
   randomizeTimers = () => {
-    const minimumPeriod = 100;
-    const maximumPeriod = 1500;
+    const minimumPeriod = this.props.minimumPeriod;
+    const maximumPeriod = this.props.maximumPeriod;
     const randomPeriod = minimumPeriod + Math.random() * (maximumPeriod - minimumPeriod);
 
     console.log("The set period is: " + randomPeriod);
