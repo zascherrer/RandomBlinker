@@ -7,7 +7,7 @@ const BlinkerContainer = (props) => {
       <div>
         <Panel>
           <Blinker isRandom={props.isRandom}/>
-          <ValueBar value={1000} />
+          <ValueBar value={1000} valueType="Lower Threshold"/>
         </Panel>
       </div>
     );

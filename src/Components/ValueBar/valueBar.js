@@ -41,9 +41,14 @@ class ValueBar extends Component {
     }
     return (
       <div className="bar">
-        <Button text="-" onClick={this.valueDecrease} size="mini"/>
-        <div className="text">{this.state.displayValue}{" s"}</div>
-        <Button text="+" onClick={this.valueIncrease} size="mini"/>
+        <div className="label">
+          {this.props.valueType}
+        </div>
+        <div className="valueContainer">
+          <Button text="-" onClick={this.valueDecrease} size="mini"/>
+          <div className="text">{this.state.displayValue}{" s"}</div>
+          <Button text="+" onClick={this.valueIncrease} size="mini"/>
+        </div>
       </div>
     );
   }
