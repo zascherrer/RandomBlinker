@@ -17,18 +17,33 @@ class BlinkerContainer extends Component {
   }
 
   minimumPeriodDecrease = () => {
-    const newMinimumPeriod = this.state.minimumPeriod - this.state.valueChangeInterval;
-    this.setState({minimumPeriod: newMinimumPeriod});
+    if (this.state.minimumPeriod >= 100) {
+      const newMinimumPeriod = this.state.minimumPeriod - this.state.valueChangeInterval;
+      this.setState({minimumPeriod: newMinimumPeriod});
+    }
+    else {
+      console.log("Minimum period cannot be decreased any further.");
+    }
   }
 
   minimumPeriodIncrease = () => {
-    const newMinimumPeriod = this.state.minimumPeriod + this.state.valueChangeInterval;
-    this.setState({minimumPeriod: newMinimumPeriod});
+    if (this.state.minimumPeriod < this.state.maximumPeriod) {
+      const newMinimumPeriod = this.state.minimumPeriod + this.state.valueChangeInterval;
+      this.setState({minimumPeriod: newMinimumPeriod});
+    }
+    else {
+      console.log("Minimum period cannot be raised higher than maximum period");
+    }
   }
 
   maximumPeriodDecrease = () => {
-    const newMaximumPeriod = this.state.maximumPeriod - this.state.valueChangeInterval;
-    this.setState({maximumPeriod: newMaximumPeriod});
+    if (this.state.maximumPeriod > this.state.minimumPeriod) {
+      const newMaximumPeriod = this.state.maximumPeriod - this.state.valueChangeInterval;
+      this.setState({maximumPeriod: newMaximumPeriod});
+    }
+    else {
+      console.log("Maximum period cannot be lowered below minimum period");
+    }
   }
 
   maximumPeriodIncrease = () => {
