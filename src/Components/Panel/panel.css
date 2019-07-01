@@ -3,4 +3,6 @@
   width: 150px;
   background-color: gray;
   z-index: 0;
+  margin: 5px;
+  border-radius: 5px;
 }

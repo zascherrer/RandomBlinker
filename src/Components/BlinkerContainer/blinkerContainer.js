@@ -63,13 +63,13 @@ class BlinkerContainer extends Component {
             />
             <ValueBar
               displayValue={this.state.minimumPeriod / 1000}
-              valueType="Lower Threshold"
+              valueType="Lower Limit"
               valueDecrease={this.minimumPeriodDecrease}
               valueIncrease={this.minimumPeriodIncrease}
             />
             <ValueBar
               displayValue={this.state.maximumPeriod / 1000}
-              valueType="Upper Threshold"
+              valueType="Upper Limit"
               valueDecrease={this.maximumPeriodDecrease}
               valueIncrease={this.maximumPeriodIncrease}
             />
